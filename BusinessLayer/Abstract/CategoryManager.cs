@@ -51,5 +51,10 @@ namespace BusinessLayer.Abstract
         {
             return _categoryDal.GetListAll();
         }
+
+        public List<Blog> getBlogByWriter(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

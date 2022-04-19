@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,6 +21,11 @@ namespace DataAccessLayer.Repositories
         }
 
         public List<Comment> GetListAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Comment> GetListAll(Expression<Func<Comment, bool>> filter)
         {
             throw new NotImplementedException();
         }

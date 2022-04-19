@@ -1,6 +1,8 @@
 ﻿using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.Repositories;
 using EntityLayer.Concrate;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +21,14 @@ namespace DataAccessLayer.EntityFramework
         public void deleteBlog(Blog blog)
         {
             throw new NotImplementedException();
+        }
+
+        public List<Blog> GetListCategory()
+        {
+           using(var c=new Context())
+            {
+                return c.Blogs.Include(x => x.Category).ToList();
+            }
         }
 
         public List<Blog> ListAllBlog()

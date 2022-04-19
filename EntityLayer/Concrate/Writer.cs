@@ -17,5 +17,6 @@ namespace EntityLayer.Concrate
         public String WriterAbout { get; set; }
         public String WriterMail { get; set; }
         public String WriterPass { get; set; }
+        public List<Blog> Blogs { get; set; }
     }
 }

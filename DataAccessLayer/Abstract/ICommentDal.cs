@@ -10,10 +10,10 @@ namespace DataAccessLayer.Abstract
 {
     public interface ICommentDal:IGenericDal<Comment> 
     {
-        List<Comment> ListAllComment();
-        void CommentAdd(Blog blog);
-        void deleteComment(Blog blog);
-        void updateComment(Blog blog);
+        List<Comment> ListAllComment(int id);
+        void CommentAdd(Comment comment);
+        void deleteComment(Comment comment);
+        void updateComment(Comment comment);
         Comment getById(int id);
     }
 }

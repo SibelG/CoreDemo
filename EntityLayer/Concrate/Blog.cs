@@ -14,11 +14,14 @@ namespace EntityLayer.Concrate
         public String BlogTitle { get; set; }
         public String BlogContent { get; set; }
         public DateTime CreateDate { get; set; }
-        public  bool BlogStatus{ get; set; }
+        public bool BlogStatus { get; set; }
         public String BlogImage { get; set; }
         public String BlogSmallImage { get; set; }
-        public int CategoryId { get; set; }
         public Category Category { get; set; }
-        public List<Comment>Comments { get; set; }
+        public int CategoryId { get; set; }
+        public Writer Writer { get; set; }
+        public int WriterId { get; set; }
+        public List<Comment> Comments { get; set; }
     }
 }
+

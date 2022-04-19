@@ -9,39 +9,55 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-    public class BlogManager : IBlogServices
+    public class BlogManager : IBlogService
     {
-        IBlogDal __IblogDal;
-        private EfBlogRepository efBlogRepository;
+      
+        private IBlogDal _IblogDal;
 
-        public BlogManager(EfBlogRepository efBlogRepository)
+        public BlogManager(IBlogDal blogdal)
         {
-            this.efBlogRepository = efBlogRepository;
+            _IblogDal = blogdal;
         }
 
         public void BlogAdd(Blog blog)
         {
-            throw new NotImplementedException();
+            _IblogDal.Insert(blog);
         }
 
         public void BlogDelete(Blog blog)
         {
-            throw new NotImplementedException();
+            _IblogDal.Delete(blog);
         }
 
         public void BlogUpdate(Blog blog)
         {
-            throw new NotImplementedException();
+            _IblogDal.Update(blog);
         }
 
-        public Blog getById(int id)
+        public List<Blog> GetBlogListByWriter(int id)
         {
-            throw new NotImplementedException();
+            return _IblogDal.GetListAll(x => x.WriterId == id);
+            //throw new NotImplementedException();
+        }
+
+        public List<Blog> GetBlogListCategory()
+        {
+            return _IblogDal.GetListCategory();
+        }
+
+        public List<Blog> getById(int id)
+        {
+            return _IblogDal.GetListAll(x => x.BlogId == id);
         }
 
         public List<Blog> getListBlog()
         {
-            return __IblogDal.GetListAll();
+            return _IblogDal.GetListAll();
+        }
+
+        Blog IBlogService.getById(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

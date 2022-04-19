@@ -13,7 +13,7 @@ namespace DataAccessLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
-            builder.UseSqlServer("server=DESKTOP-EN1BN05\\MSSQLSERVER1;database=CoreBlogData;integrated security=true;");
+            builder.UseSqlServer("server=DESKTOP-EN1BN05\\MSSQLSERVER1;database=CoreBlogDatabase;integrated security=true;");
             
 
         }
@@ -23,6 +23,7 @@ namespace DataAccessLayer.Concrete
         public DbSet<Category> Categories { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Writer> Writers { get; set; }
+        public DbSet<NewsLetter>NewsLetters { get; set; }
 
     }
 }

@@ -11,22 +11,24 @@ namespace DataAccessLayer.EntityFramework
 {
     public class EfCommentRepository : GenericRepository<Comment>, ICommentDal
     {
-        public void CommentAdd(Blog blog)
+        public void CommentAdd(Comment comment)
         {
             throw new NotImplementedException();
         }
 
-        public void deleteComment(Blog blog)
+        public void deleteComment(Comment comment)
         {
             throw new NotImplementedException();
         }
 
-        public List<Comment> ListAllComment()
+        public List<Comment> ListAllComment(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void updateComment(Blog blog)
+      
+
+        public void updateComment(Comment comment)
         {
             throw new NotImplementedException();
         }
