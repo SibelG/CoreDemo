@@ -23,5 +23,40 @@ namespace BusinessLayer.Abstract
 
             throw new NotImplementedException();
         }
+
+        public void deleteT(NewsLetter t)
+        {
+            throw new NotImplementedException();
+        }
+
+        public NewsLetter getById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public NewsLetter getByIdT(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<NewsLetter> ListAllT(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<NewsLetter> ListAllT()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TAdd(NewsLetter t)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void updateT(NewsLetter t)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

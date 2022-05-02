@@ -13,7 +13,7 @@ namespace CoreDemo.ViewComponents
         CategoryManager cm = new CategoryManager(new EfCategoryRepository());
         public IViewComponentResult Invoke()
         {
-            var values = cm.getListCategory();
+            var values = cm.ListAllT();
             return View(values);
 
         }

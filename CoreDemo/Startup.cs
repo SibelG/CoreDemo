@@ -63,7 +63,7 @@ namespace CoreDemo
 
             app.UseRouting();
             app.UseSession();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseStatusCodePagesWithReExecute("ErrorPage/Error1","?code={0}");

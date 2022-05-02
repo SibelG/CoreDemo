@@ -12,14 +12,39 @@ namespace BusinessLayer.Abstract
     {
         IAboutDal _IAboutDal;
 
-        public AboutManager(IAboutDal ıAboutDal)
+        public AboutManager(IAboutDal IAboutDal)
         {
-            _IAboutDal = ıAboutDal;
+            _IAboutDal = IAboutDal;
+        }
+
+        public void deleteT(About t)
+        {
+            _IAboutDal.Delete(t);
+        }
+
+        public About getByIdT(int id)
+        {
+            return _IAboutDal.getById(id);
         }
 
         public List<About> GetList()
         {
+             return _IAboutDal.GetListAll();
+        }
+
+        public List<About> ListAllT()
+        {
             return _IAboutDal.GetListAll();
+        }
+
+        public void TAdd(About t)
+        {
+            _IAboutDal.Insert(t);
+        }
+
+        public void updateT(About t)
+        {
+             _IAboutDal.Update(t);
         }
     }
 }

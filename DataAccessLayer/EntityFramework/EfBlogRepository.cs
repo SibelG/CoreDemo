@@ -13,14 +13,12 @@ namespace DataAccessLayer.EntityFramework
 {
     public class EfBlogRepository : GenericRepository<Blog>, IBlogDal
     {
-        public void BlogAdd(Blog blog)
+        public List<Blog> GetListByWriterCategory(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        public void deleteBlog(Blog blog)
-        {
-            throw new NotImplementedException();
+            using (var c = new Context())
+            {
+                return c.Blogs.Include(x => x.Category).Where(x=>x.WriterId==id).ToList();
+            }
         }
 
         public List<Blog> GetListCategory()
@@ -31,14 +29,6 @@ namespace DataAccessLayer.EntityFramework
             }
         }
 
-        public List<Blog> ListAllBlog()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void updateBlog(Blog blog)
-        {
-            throw new NotImplementedException();
-        }
+  
     }
 }

@@ -14,7 +14,7 @@ namespace CoreDemo.Controllers
         CategoryManager cm = new CategoryManager(new EfCategoryRepository());
         public IActionResult Index()
         {
-            var values = cm.getListCategory();
+            var values = cm.ListAllT();
             return View(values);
         }
     }

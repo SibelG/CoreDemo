@@ -1,4 +1,6 @@
-﻿using DataAccessLayer.Abstract;
+﻿
+
+using DataAccessLayer.Abstract;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrate;
 using System;
@@ -19,20 +21,42 @@ namespace BusinessLayer.Abstract
             _IblogDal = blogdal;
         }
 
-        public void BlogAdd(Blog blog)
-        {
-            _IblogDal.Insert(blog);
-        }
-
-        public void BlogDelete(Blog blog)
-        {
-            _IblogDal.Delete(blog);
-        }
+     
 
         public void BlogUpdate(Blog blog)
         {
             _IblogDal.Update(blog);
         }
+        public List<Blog>GetListCategoryByWriter(int id)
+        {
+            return _IblogDal.GetListByWriterCategory(id);
+        }
+
+        public void deleteT(Blog t)
+        {
+            _IblogDal.Delete(t);
+        }
+
+        /* public void BlogAdd(Blog blog)
+         {
+             _IblogDal.Insert(blog);
+         }
+
+         public void BlogDelete(Blog blog)
+         {
+             _IblogDal.Delete(blog);
+         }
+
+         public void BlogUpdate(Blog blog)
+         {
+             _IblogDal.Update(blog);
+         }
+
+         public void deleteT(Blog t)
+         {
+             _IblogDal.Delete(t);
+
+         }*/
 
         public List<Blog> GetBlogListByWriter(int id)
         {
@@ -50,14 +74,42 @@ namespace BusinessLayer.Abstract
             return _IblogDal.GetListAll(x => x.BlogId == id);
         }
 
-        public List<Blog> getListBlog()
+        public Blog getByIdT(int id)
         {
-            return _IblogDal.GetListAll();
+            return _IblogDal.getById(id);
         }
 
-        Blog IBlogService.getById(int id)
+        public List<Blog> getLastBlog()
+        {
+            return _IblogDal.GetListAll().Take(3).ToList();
+        }
+
+        public List<Blog> getListBlog()
         {
             throw new NotImplementedException();
+        }
+
+        /* public List<Blog> getListBlog()
+         {
+             return _IblogDal.GetListAll();
+         }*/
+
+      
+
+  
+        public void TAdd(Blog t)
+        {
+            _IblogDal.Insert(t);
+        }
+
+        public void updateT(Blog t)
+        {
+            _IblogDal.Update(t); ;
+        }
+
+        public List<Blog> ListAllT()
+        {
+            return _IblogDal.GetListAll();
         }
     }
 }

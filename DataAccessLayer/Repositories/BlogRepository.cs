@@ -46,6 +46,11 @@ namespace DataAccessLayer.Repositories
             throw new NotImplementedException();
         }
 
+        public List<Blog> GetListByWriterCategory(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Blog> GetListCategory()
         {
             throw new NotImplementedException();

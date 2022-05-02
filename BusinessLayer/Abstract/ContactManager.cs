@@ -22,5 +22,30 @@ namespace BusinessLayer.Abstract
         {
             _IcontactDal.Insert(p);
         }
+
+        public void deleteT(Contact t)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Contact getByIdT(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Contact> ListAllT()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TAdd(Contact t)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void updateT(Contact t)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
